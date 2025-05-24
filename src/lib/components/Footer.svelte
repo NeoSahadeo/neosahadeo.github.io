@@ -9,7 +9,7 @@
 	</aside>
 	<nav>
 		<div class="grid grid-flow-col gap-4">
-			<a href="https://www.linkedin.com/in/neosahadeo/?_l=en_US">
+			<a aria-label="Linked In" href="https://www.linkedin.com/in/neosahadeo/?_l=en_US">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -17,7 +17,7 @@
 					/>
 				</svg>
 			</a>
-			<a href="https://dev.to/neosahadeo">
+			<a aria-label="Dev.To" href="https://dev.to/neosahadeo">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -25,7 +25,7 @@
 					/>
 				</svg>
 			</a>
-			<a href="https://www.instagram.com/neosahadeo">
+			<a aria-label="Instagram" href="https://www.instagram.com/neosahadeo">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -33,7 +33,7 @@
 					/>
 				</svg>
 			</a>
-			<a href="https://x.com/NeoSahadeo_/">
+			<a aria-label="X" href="https://x.com/NeoSahadeo_/">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 12 12">
 					<path
 						fill="currentColor"
@@ -41,7 +41,7 @@
 					/>
 				</svg>
 			</a>
-			<a href="https://github.com/NeoSahadeo/">
+			<a aria-label="Github" href="https://github.com/NeoSahadeo/">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
@@ -49,7 +49,7 @@
 					/>
 				</svg>
 			</a>
-			<a href="https://codeberg.org/NeoSahadeo/">
+			<a aria-label="Codeberg" href="https://codeberg.org/NeoSahadeo/">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path
 						fill="currentColor"
