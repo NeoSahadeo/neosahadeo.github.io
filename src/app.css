@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+	name: 'neo';
+	default: true;
+	prefersdark: true;
+	color-scheme: 'dark';
+	--color-base-100: #de240a;
+	--color-base-200: #1b415c;
+	--color-base-300: #184421;
+	--color-base-content: oklch(100% 0 0);
+	--color-primary: #fff6f4;
+	--color-primary-content: oklch(27% 0.077 45.635);
+	--color-secondary: oklch(71% 0.194 13.428);
+	--color-secondary-content: oklch(27% 0.105 12.094);
+	--color-accent: oklch(26% 0.007 34.298);
+	--color-accent-content: oklch(100% 0 0);
+	--color-neutral: #fff6f4;
+	--color-neutral-content: oklch(14% 0.004 49.25);
+	--color-info: oklch(70% 0.165 254.624);
+	--color-info-content: oklch(28% 0.091 267.935);
+	--color-success: oklch(76% 0.233 130.85);
+	--color-success-content: oklch(26% 0.065 152.934);
+	--color-warning: oklch(50% 0.213 27.518);
+	--color-warning-content: oklch(25% 0.092 26.042);
+	--color-error: oklch(25% 0.092 26.042);
+	--color-error-content: oklch(97% 0.013 17.38);
+	--radius-selector: 0.5rem;
+	--radius-field: 1rem;
+	--radius-box: 2rem;
+	--size-selector: 0.1875rem;
+	--size-field: 0.25rem;
+	--border: 2px;
+	--depth: 0;
+	--noise: 0;
+}
+
+body {
+	min-height: 100dvh;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background:
+		linear-gradient(34deg, rgba(255, 165, 0, 0.4), rgba(255, 0, 0, 0.4)),
+		url('$lib/extra/noise.svg');
+	opacity: 0.4;
+	pointer-events: none;
+	z-index: 999;
+}
