@@ -52,7 +52,7 @@
 		bind:clientHeight={header_height}
 		in:fly={{ y: -100, duration: duration }}
 		out:fly={{ y: -100, duration: duration }}
-		class={`header bg-primary text-primary-content z-50 w-screen px-4 py-3 ${show_header ? 'fixed' : 'static'}`}
+		class={`header bg-primary text-primary-content z-50 w-full px-4 py-3 ${show_header ? 'fixed' : 'static'}`}
 	>
 		<nav class="flex flex-row">
 			<ul class="flex flex-row sm:gap-2">

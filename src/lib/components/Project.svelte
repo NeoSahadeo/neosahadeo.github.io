@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Tag from './Tag.svelte';
 	let loaded = $state(false);
-	const shared_img_c = 'h-52 w-full rounded-lg';
+	const shared_img_c = 'h-80 md:h-52 w-full rounded-lg';
 
 	let {
 		src = 'https://i.imgur.com/bTmXEak.jpeg',
@@ -13,10 +13,10 @@
 	} = $props();
 </script>
 
-<div class="w-min">
+<div class="w-min scale-95 md:scale-100">
 	<a href={link}>
 		<div
-			class="bg-primary text-primary-content flex h-full max-h-96 w-96 flex-col gap-4 rounded-lg px-2 py-2 pb-4"
+			class="bg-primary text-primary-content flex h-full max-h-min w-screen flex-col gap-4 rounded-lg px-2 py-2 pb-4 md:max-h-96 md:w-96"
 		>
 			{#if !loaded}
 				<div class={`skeleton ${shared_img_c}`}></div>

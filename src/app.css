@@ -36,6 +36,8 @@
 	--noise: 0;
 }
 
+* {}
+
 body {
 	min-height: 100dvh;
 }
