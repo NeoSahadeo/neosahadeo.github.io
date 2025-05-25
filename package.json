@@ -34,7 +34,10 @@
 		]
 	},
 	"dependencies": {
+		"@shikijs/types": "^3.4.2",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"daisyui": "^5.0.37"
+		"daisyui": "^5.0.37",
+		"rehype-raw": "^7.0.0",
+		"shiki": "^3.4.2"
 	}
 }
