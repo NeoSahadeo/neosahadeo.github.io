@@ -2,6 +2,7 @@
 	import { fly, fade } from 'svelte/transition';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
+	import { derived } from 'svelte/store';
 
 	let not_home = $state(false);
 	$effect(() => {
@@ -10,49 +11,56 @@
 
 	const duration = 500;
 	let prev_loc = 0;
+	let prev_time = 0;
 	let timer: null | number = null;
 	let show_header = $state(false);
 	let play_header = $state(true);
 	let header_height = $state(0);
 
-	const animte_header = () => {
-		play_header = true;
-		if (timer) clearTimeout(timer);
+	const update_header = (e) => {
+		const scroll_delta = window.scrollY - prev_loc;
+		const time_delta = e.timeStamp - prev_time;
 
-		timer = setTimeout(() => {
+		prev_time = e.timeStamp;
+		prev_loc = window.scrollY;
+
+		if (window.scrollY == 0) {
+			show_header = false;
+			play_header = true;
+			return;
+		}
+		if (window.scrollY - header_height < 0) {
+			show_header = true;
+			play_header = true;
+			return;
+		}
+		if (time_delta < 30) return; // Scalar speed adjustment
+
+		if (scroll_delta < 0) {
+			show_header = true;
+			play_header = true;
+		} else if (scroll_delta > 0) {
+			show_header = false;
 			play_header = false;
-			timer = null;
-		}, duration);
+		}
 	};
 
 	onMount(() => {
-		// document.addEventListener('scroll', (e) => {
-		// 	if (window.scrollY < header_height) return;
-		//
-		// 	console.log(timer);
-		// 	if (timer && window.scrollY == 0) {
-		// 		show_header = true;
-		// 		prev_loc = 0;
-		// 		animte_header();
-		// 		return;
-		// 	}
-		//
-		// 	if (window.scrollY - prev_loc > 0) show_header = false;
-		// 	else if (!timer) {
-		// 		show_header = true;
-		// 		animte_header();
-		// 	}
-		// 	prev_loc = window.scrollY;
-		// });
+		document.removeEventListener('scroll', update_header);
+		document.addEventListener('scroll', update_header);
 	});
 </script>
 
+<div
+	style={`height:${header_height}px`}
+	class={`w-full bg-green-200 ${show_header ? 'static' : 'hidden'}`}
+></div>
 {#if play_header}
 	<header
 		bind:clientHeight={header_height}
 		in:fly={{ y: -100, duration: duration }}
 		out:fly={{ y: -100, duration: duration }}
-		class={`header bg-primary text-primary-content z-50 w-full px-4 py-3 ${show_header ? 'fixed' : 'static'}`}
+		class={`header bg-primary text-primary-content top-0 z-50 w-full px-4 py-3 ${show_header ? 'fixed' : 'static'}`}
 	>
 		<nav class="flex flex-row">
 			<ul class="flex flex-row sm:gap-2">
@@ -62,7 +70,7 @@
 					</li>
 				{/if}
 				<li>
-					<a class="flex gap-2 px-3" href="https://neosahadeo.github.io/journal/">
+					<a class="flex gap-2 px-3" href="journal">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
 							<path
 								fill="currentColor"
