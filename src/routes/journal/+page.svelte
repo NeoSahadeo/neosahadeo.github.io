@@ -1,11 +1,14 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-
-	let { data }: PageProps = $props();
+	let { data }: { data: any } = $props();
+	$effect(() => {
+		console.log(data.posts);
+	});
 </script>
 
 <ul>
-	<!-- {#each data.posts as post} -->
-	<li><a href={`/journal/example`}>Example</a></li>
-	<!-- {/each} -->
+	{#each data.posts as post}
+		{#if post.meta}
+			<li><a href={`/journal/${post.slug}`}>{post.meta.title}</a></li>
+		{/if}
+	{/each}
 </ul>

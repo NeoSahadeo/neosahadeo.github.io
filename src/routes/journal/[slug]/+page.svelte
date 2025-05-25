@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-
-	let { data }: PageProps = $props();
+	let { data }: { data: any } = $props();
 </script>
 
-<h1>{data.post.title}</h1>
-<div>{@html data.post.content}</div>
+{#if data.post}
+	<h1 class="text-2xl font-black">{data.post.meta.title}</h1>
+	<svelte:component this={data.post.content} />
+{/if}
