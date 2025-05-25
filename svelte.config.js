@@ -18,8 +18,17 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: false
-		})
+		}),
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// ignore deliberate link to shiny 404 page
+				if (path === '/not-found' && referrer === '/blog/how-we-built-our-404-page') {
+					return;
+				}
+			}
+		}
 	}
+}
 };
 
 export default config;
