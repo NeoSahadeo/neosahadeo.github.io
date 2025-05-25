@@ -23,7 +23,7 @@ The above command will create long list of includes that you should copy. Replac
 
 This will be the file the clangd LSP will use to resolve paths. Paste the code in and format it to look like below (you're paths will be different to mine). If you're using Vim here are the commands to quickly do this `%s/ /\r/g` and `%s/\(.*\)/"\1",/g`
 
-```
+```c
 CompileFlags:
 	Add: [
 		"-I/usr/include/gtk-4.0",

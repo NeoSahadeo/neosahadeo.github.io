@@ -64,7 +64,7 @@ The `components` folder is where all your HTML and JS(TS) will go. These must be
 
 To write a plugin is really quite simple, follow this template
 
-```
+```typescript
 export const [PLUGIN_HANDLER_EXPORT] = (s: any) => {
    // Register IPC Content here
 };
@@ -94,7 +94,7 @@ IPC events should be registered in the preload.js, currently I have no plans to 
 
 To register the plugin, import the plugin into the main.ts file, then add the plugin into the plugins list
 
-```
+```typescript
 const plugins = [
     dispatcher, // We them events
     file_loader, // Load asap
@@ -108,7 +108,7 @@ const plugins = [
 
 For the IPC Handler, there is a plugins\_handler list
 
-```
+```typescript
 const plugin_handlers = [
     file_loader_handler,
     dynamic_styles_handler,
@@ -139,19 +139,19 @@ StopPropagation = true
 ### Stream Data to the Components
 
 *   window.sextant\_events.\[METHOD\]
-    
+
 
 Something you might want to do is have your plugin data be available to the components you inject. Sextant provides a event structure similar to normal Javascript. The event listener code is in the **utils.ts** file. Methods exposed: `addEventListener` `dispatchEvent` `removeEventListener`
 
 For example, in the **BetterStream** plugin, we stream data to the components using the dispatch event handler.
 
-```
+```typescript
 window.sextant_events.dispatchEvent("bitrate", bitrate);
 ```
 
 and in the component script we can listen for "bitrate" events.
 
-```
+```typescript
 window.sextant_events.addEventListener("bitrate", (bitrate: number) => {
 })
 ```
