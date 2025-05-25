@@ -70,7 +70,7 @@
 					</li>
 				{/if}
 				<li>
-					<a class="flex gap-2 px-3" href="/journal">
+					<a class="flex gap-2 px-3" href="/journal/">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
 							<path
 								fill="currentColor"
@@ -81,7 +81,7 @@
 					</a>
 				</li>
 				<li>
-					<a class="flex gap-2 px-3" href="./projects">
+					<a class="flex gap-2 px-3" href="/projects/">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 							<path
 								fill="currentColor"
