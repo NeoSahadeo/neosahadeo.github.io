@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Tag from './Tag.svelte';
 	let loaded = $state(false);
-	const shared_img_c = 'h-80 md:h-52 w-full rounded-lg';
+	const shared_img_c = 'md:h-52 w-full rounded-lg';
 
 	let {
 		src = 'https://i.imgur.com/bTmXEak.jpeg',
