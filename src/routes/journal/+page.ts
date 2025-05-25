@@ -11,5 +11,12 @@ export async function load() {
 			default: result.default
 		});
 	}
+
+	posts.sort((a, b) => {
+		const dateA = new Date(a.meta.date).getTime();
+		const dateB = new Date(b.meta.date).getTime();
+		return dateB - dateA; // Descending order (newest first)
+	});
+
 	return { posts };
 }

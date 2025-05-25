@@ -36,7 +36,12 @@
 	--noise: 0;
 }
 
-* {}
+@font-face {
+	font-family: 'Regular Roboto Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
 
 body {
 	min-height: 100dvh;

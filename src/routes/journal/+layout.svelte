@@ -3,6 +3,6 @@
 	let { children } = $props();
 </script>
 
-<article class="p-3">
+<article class="min-h-dvh p-3">
 	{@render children()}
 </article>
