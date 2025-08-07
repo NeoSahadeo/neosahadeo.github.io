@@ -26,8 +26,10 @@
 		update_loading_state('header', false);
 	};
 
+	let mounted = false;
 	$effect(() => {
-		if (get_is_protected()) return;
+		if (mounted || get_is_protected()) return;
+		mounted = true;
 		update_width();
 	});
 </script>
