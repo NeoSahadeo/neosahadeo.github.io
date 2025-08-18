@@ -45,10 +45,10 @@
 {#if loading}
 	<Loading />
 {/if}
-<main class="flex min-h-dvh flex-col gap-10">
+<main class="flex min-h-dvh w-full flex-col gap-10">
 	<Header />
 	<div
-		class={`py-20 ` + (get_is_protected() ? '' : 'mx-auto')}
+		class={`w-full py-20 ` + (get_is_protected() ? '' : 'mx-auto')}
 		style={`max-width: ${get_is_protected() ? -1 : get_max_width()}px; flex-grow:1`}
 	>
 		{#if get_is_protected()}
