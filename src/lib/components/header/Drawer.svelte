@@ -12,6 +12,7 @@
 
 	const links = [
 		['Home', url_resolver('self')],
+		['Projects', url_resolver('self') + 'projects'],
 		['Tutorials', url_resolver('self') + 'tutorials'],
 		['Blogs', url_resolver('self') + 'blogs'],
 		['Videos', url_resolver('self') + 'videos']

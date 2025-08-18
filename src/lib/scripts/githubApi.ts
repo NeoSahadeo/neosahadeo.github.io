@@ -22,3 +22,15 @@ export async function fetch_tutorials() {
 	});
 	return arr;
 }
+
+export async function fetch_repos() {
+	try {
+		const response = await fetch(
+			'https://api.github.com/search/repositories?q=user:NeoSahadeo+language:&sort=created&order=desc&per_page=100&page=1'
+		);
+		if (response.ok) return await response.json();
+	} catch (err) {
+		console.log(err);
+		return null;
+	}
+}

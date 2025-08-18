@@ -3,13 +3,13 @@
 	import { url_resolver } from '$lib/scripts/urlResolver';
 	import handle_page_blur from '$lib/scripts/handlePageBlur';
 	import { fetch_tutorials } from '$lib/scripts/githubApi';
-	import type { Github } from '$lib/types/Github';
+	import type { GithubCustom } from '$lib/types/Github';
 	import type { Tutorial } from '$lib/types/Tutorial';
 	import { generate_date } from '$lib/scripts/utils';
 
 	let cat_image_src = $state('');
 	let cat_loaded = $state(false);
-	let tutorials = $state([] as [Github, Tutorial][]);
+	let tutorials = $state([] as [GithubCustom, Tutorial][]);
 	const shared_image_css = 'md:h-96 md:w-96 w-82 h-82 ';
 
 	const hello_locales = [
@@ -120,6 +120,7 @@
 				could and should be covered in better detail.
 			</p>
 			<ul class="list-[disc] pl-5">
+				<li><a class="link-info" href={url_resolver('self') + 'projects/'}>Projects</a></li>
 				<li><a class="link-info" href={url_resolver('self') + 'tutorials/'}>Tutorials</a></li>
 				<li><a class="link-info" href={url_resolver('self') + 'blogs/'}>Blogs</a></li>
 				<li><a class="link-info" href={url_resolver('self') + 'videos/'}>Videos</a></li>
@@ -127,32 +128,34 @@
 		</div>
 		<div>
 			<h1 class="mb-5 text-xl font-bold">Latest Kermits</h1>
-			{#each tutorials as item}
-				<div class="outline-base-200 my-2 rounded px-2 py-2 outline-1">
-					<a href={item[1].link}>
-						<div class="flex flex-row justify-between">
-							<div>
-								<h2 class="text-base font-bold">{item[1].title}</h2>
-								<p>{item[1].desc}</p>
+			<div class="outline-primary mx-1 max-h-56 overflow-y-scroll rounded px-1 py-1 outline-1">
+				{#each tutorials as item}
+					<div class="outline-base-200 my-2 rounded px-2 py-2 outline-1">
+						<a href={item[1].link}>
+							<div class="flex flex-row justify-between">
+								<div>
+									<h2 class="text-base font-bold">{item[1].title}</h2>
+									<p>{item[1].desc}</p>
+								</div>
+								<img src={item[1].thumb} class="h-20 w-20 rounded" alt="Thumbnail" />
 							</div>
-							<img src={item[1].thumb} class="h-20 w-20 rounded" alt="Thumbnail" />
+						</a>
+						<span class="text-xs font-bold">
+							{generate_date(item[0].commit.author.date)}
+							• By
+							<a href="https://github.com/NeoSahadeo/">{item[0].commit.author.name}</a>
+						</span>
+						<div>
+							<a
+								class="link-accent mx-0 px-0 text-xs"
+								target="_blank"
+								href={'https://api.github.com/repos/NeoSahadeo/neosahadeo.github.io/commits/' +
+									item[0].sha}>view kermit</a
+							>
 						</div>
-					</a>
-					<span class="text-xs font-bold">
-						{generate_date(item[0].commit.author.date)}
-						• By
-						<a href="https://github.com/NeoSahadeo/">{item[0].commit.author.name}</a>
-					</span>
-					<div>
-						<a
-							class="link-accent mx-0 px-0 text-xs"
-							target="_blank"
-							href={'https://api.github.com/repos/NeoSahadeo/neosahadeo.github.io/commits/' +
-								item[0].sha}>view kermit</a
-						>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
