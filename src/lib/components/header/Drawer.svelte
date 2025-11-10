@@ -2,12 +2,28 @@
 	import { url_resolver } from '$lib/scripts/urlResolver';
 	import { onMount } from 'svelte';
 	import ThemeSwitch from '../buttons/ThemeSwitch.svelte';
+	import { slide } from 'svelte/transition';
 
 	let drawer_input = $state<HTMLInputElement>();
+	let drawer_show = $state(true);
 
 	function toggle_drawer() {
 		drawer_input?.click();
 	}
+
+	// function toggle_drawer() {
+	// 	if (drawer_show) {
+	// 		drawer_input?.click();
+	// 		setTimeout(() => {
+	// 			drawer_show = !drawer_show;
+	// 		}, 200);
+	// 	} else {
+	// 		drawer_show = !drawer_show;
+	// 		setTimeout(() => {
+	// 			drawer_input?.click();
+	// 		}, 50);
+	// 	}
+	// }
 	// onMount(() => toggle_drawer());
 
 	const links = [
@@ -43,7 +59,7 @@
 			</svg>
 		</button>
 	</div>
-	<div class="drawer-side">
+	<div class={`drawer-side ${drawer_show ? '' : 'hidden'}`}>
 		<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 		<div class="flex h-full w-full flex-row">
 			<ul class="menu bg-base-200 text-base-content min-h-full w-80 gap-4 p-4">
