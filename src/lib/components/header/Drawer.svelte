@@ -2,10 +2,10 @@
 	import { url_resolver } from '$lib/scripts/urlResolver';
 	import { onMount } from 'svelte';
 	import ThemeSwitch from '../buttons/ThemeSwitch.svelte';
-	import { slide } from 'svelte/transition';
+	import { update_loading_state } from '$lib/state.svelte';
 
 	let drawer_input = $state<HTMLInputElement>();
-	let drawer_show = $state(true);
+	let drawer_show = $state(false);
 
 	function toggle_drawer() {
 		drawer_input?.click();
@@ -24,7 +24,6 @@
 	// 		}, 50);
 	// 	}
 	// }
-	// onMount(() => toggle_drawer());
 
 	const links = [
 		['Home', url_resolver('self')],
@@ -59,7 +58,7 @@
 			</svg>
 		</button>
 	</div>
-	<div class={`drawer-side ${drawer_show ? '' : 'hidden'}`}>
+	<div class="drawer-side">
 		<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
 		<div class="flex h-full w-full flex-row">
 			<ul class="menu bg-base-200 text-base-content min-h-full w-80 gap-4 p-4">

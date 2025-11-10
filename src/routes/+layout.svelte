@@ -13,8 +13,8 @@
 	import { url_resolver } from '$lib/scripts/urlResolver';
 	import { update_style } from '$lib/scripts/css';
 	import Loading from '$lib/components/loading/Loading.svelte';
+	import { loading_state } from '$lib/state.svelte';
 
-	let loading = $state(true);
 	const protected_pages = ['settings'];
 
 	onMount(() => {
@@ -32,17 +32,22 @@
 		const loading_states = get_loading_states();
 		if (loading_states.filter((e) => e[1]).length === 0) {
 			document.body.style.overflow = '';
-			loading = false;
+			loading_state.set(false);
 		} else {
 			document.body.style.overflow = 'hidden';
-			loading = true;
+			loading_state.set(true);
 		}
 	});
 
 	let { children } = $props();
 </script>
 
-{#if loading}
+{#if loading_state.get()}
+	<style>
+		* {
+			overflow: hidden;
+		}
+	</style>
 	<Loading />
 {/if}
 <main class="flex min-h-dvh w-full flex-col gap-10">

@@ -4,13 +4,15 @@
 	import { onMount } from 'svelte';
 	import { fetch_repos } from '$lib/scripts/githubApi';
 	import type { Repository } from '$lib/types/Github';
-	import { get_max_width } from '$lib/state.svelte';
+	import { get_max_width, update_loading_state } from '$lib/state.svelte';
 
 	let repos = $state<Repository[]>([]);
 
 	onMount(async () => {
 		document.title = 'Projects | Neo Sahadeo';
+		update_loading_state('projects', true);
 		repos = (await fetch_repos()).items ?? [];
+		update_loading_state('projects', false);
 	});
 </script>
 

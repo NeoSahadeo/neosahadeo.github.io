@@ -1,3 +1,11 @@
+function create_state<T>(iv: T) {
+	let state = $state<T>(iv);
+	return {
+		get: () => state,
+		set: (value: T) => (state = value)
+	};
+}
+
 let max_width = $state();
 export const get_max_width = () => max_width;
 export const set_max_width = (value: any) => (max_width = value);
@@ -17,6 +25,7 @@ export const update_loading_state = (alias: string, state: boolean) => {
 	}
 };
 export const get_loading_states = () => loading_states;
+export const loading_state = create_state<boolean>(true);
 
 let is_protected = $state(true);
 export const get_is_protected = () => is_protected;

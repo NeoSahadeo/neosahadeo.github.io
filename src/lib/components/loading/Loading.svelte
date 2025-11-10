@@ -31,5 +31,7 @@
 	class="bg-base-100 absolute top-0 left-0 flex h-screen w-screen items-center justify-center text-center"
 	style="z-index: 9999;"
 >
-	<h1 bind:this={element} class="text-2xl font-black text-nowrap md:text-4xl">.</h1>
+	<h1 bind:this={element} class="text-2xl font-black text-nowrap md:text-4xl">
+		Stand By for Legitness
+	</h1>
 </main>
