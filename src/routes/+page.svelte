@@ -126,7 +126,7 @@
 				<li><a class="link-info" href={url_resolver('self') + 'videos/'}>Videos</a></li>
 			</ul>
 		</div>
-		<div>
+		<div class="hidden">
 			<h1 class="mb-5 text-xl font-bold">Latest Kermits</h1>
 			<div class="outline-primary mx-1 max-h-56 overflow-y-scroll rounded px-1 py-1 outline-1">
 				{#each tutorials as item}
