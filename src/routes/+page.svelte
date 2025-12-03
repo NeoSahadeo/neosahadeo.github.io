@@ -120,7 +120,7 @@
 				could and should be covered in better detail.
 			</p>
 			<br />
-			<p>I also write/copy documentation for things I feel should be covered/formated better.</p>
+			<p>I also write/copy documentation for things I feel should be covered/formatted better.</p>
 			<br />
 			<ul class="list-[disc] pl-5">
 				<li><a class="link-info" href={url_resolver('self') + 'docs/'}>Docs</a></li>
