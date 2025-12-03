@@ -17,7 +17,6 @@ function url_resolver(type: 'self'): null | string {
 				return API_URI.SELF_PROD;
 		}
 	}
-	return null;
 }
 
 export { url_resolver };
