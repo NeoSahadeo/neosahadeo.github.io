@@ -27,7 +27,7 @@
 
 	const links = [
 		['Home', url_resolver('self')],
-		['Docs', url_resolver('self') + 'docs'],
+		// ['Docs', url_resolver('self') + 'docs'],
 		['Projects', url_resolver('self') + 'projects'],
 		['Tutorials', url_resolver('self') + 'tutorials'],
 		['Blogs', url_resolver('self') + 'blogs'],

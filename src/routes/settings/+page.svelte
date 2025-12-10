@@ -5,7 +5,14 @@
 	import { onMount } from 'svelte';
 	import WarningIcon from '$lib/components/icons/WarningIcon.svelte';
 
-	const settings = $state<any>({});
+	let settings = $state<any>({});
+	let css_fullscreen = $state(false);
+
+	$effect(() => {
+		if (css_fullscreen) {
+			document.body.style.overflowY = 'hidden';
+		}
+	});
 
 	onMount(() => {
 		settings.max_width = cache_control({
@@ -39,10 +46,11 @@
 			}}
 		/>
 	</div>
-	<div>
-		<p>Color Override (CSS)</p>
+	<div class="flex flex-col">
+		<p>Override CSS</p>
 		<textarea
-			class="input"
+			class={`input resize ${css_fullscreen ? 'absolute top-0 left-0 h-dvh w-full pt-2' : ''}`}
+			style={`${css_fullscreen ? 'z-index: 999;' : ''}`}
 			bind:value={settings.color_override}
 			onkeyup={() => {
 				if (!settings.color_override) {
@@ -61,6 +69,17 @@
 			}}
 		>
 		</textarea>
+		<button
+			onclick={() => (css_fullscreen = !css_fullscreen)}
+			class={`btn ${css_fullscreen ? 'absolute top-4 right-4' : 'my-2 ml-auto'}`}
+			style={`${css_fullscreen ? 'z-index: 9999;' : ''}`}
+		>
+			{#if css_fullscreen}
+				Exit Fullsceen
+			{:else}
+				View in Fullsceen
+			{/if}
+		</button>
 	</div>
 	<div>
 		<p>Cache Control</p>
