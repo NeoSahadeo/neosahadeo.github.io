@@ -11,6 +11,8 @@
 	$effect(() => {
 		if (css_fullscreen) {
 			document.body.style.overflowY = 'hidden';
+		} else {
+			document.body.style.overflowY = 'visible';
 		}
 	});
 
@@ -43,8 +45,7 @@
 					method: 'set',
 					data: settings.max_width
 				});
-			}}
-		/>
+			}} />
 	</div>
 	<div class="flex flex-col">
 		<p>Override CSS</p>
@@ -66,14 +67,12 @@
 					});
 				}
 				update_style();
-			}}
-		>
+			}}>
 		</textarea>
 		<button
 			onclick={() => (css_fullscreen = !css_fullscreen)}
 			class={`btn ${css_fullscreen ? 'absolute top-4 right-4' : 'my-2 ml-auto'}`}
-			style={`${css_fullscreen ? 'z-index: 9999;' : ''}`}
-		>
+			style={`${css_fullscreen ? 'z-index: 9999;' : ''}`}>
 			{#if css_fullscreen}
 				Exit Fullsceen
 			{:else}
@@ -88,8 +87,7 @@
 			onclick={() => {
 				cache_control({ name: '', method: 'clear' });
 				document.location.reload();
-			}}
-		>
+			}}>
 			<WarningIcon />
 			Clear Local Storage
 		</button>
