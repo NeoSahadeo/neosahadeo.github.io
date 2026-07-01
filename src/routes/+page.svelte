@@ -122,12 +122,12 @@
 			<br />
 			<p>I also write/copy documentation for things I feel should be covered/formatted better.</p>
 			<br />
-			<ul class="list-[disc] pl-5">
-				<li><a class="link-info" href={url_resolver('self') + 'docs/'}>Docs</a></li>
-				<li><a class="link-info" href={url_resolver('self') + 'projects/'}>Projects</a></li>
-				<li><a class="link-info" href={url_resolver('self') + 'tutorials/'}>Tutorials</a></li>
-				<li><a class="link-info" href={url_resolver('self') + 'blogs/'}>Blogs</a></li>
-				<li><a class="link-info" href={url_resolver('self') + 'videos/'}>Videos</a></li>
+			<ul class="list-disc pl-5">
+				<li><a class="link-primary link" href={url_resolver('self') + 'docs/'}>Docs</a></li>
+				<li><a class="link-primary link" href={url_resolver('self') + 'projects/'}>Projects</a></li>
+				<li><a class="link-primary link" href={url_resolver('self') + 'tutorials/'}>Tutorials</a></li>
+				<li><a class="link-primary link" href={url_resolver('self') + 'blogs/'}>Blogs</a></li>
+				<li><a class="link-primary link" href={url_resolver('self') + 'videos/'}>Videos</a></li>
 			</ul>
 		</div>
 		<div class="hidden">

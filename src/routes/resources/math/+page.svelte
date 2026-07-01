@@ -16,7 +16,7 @@
 <ul>
 {#each links as l}
 <li class="list-disc">
-<a class="text-blue-300" href={l.link}>{l.name}</a>
+<a class="link link-primary" href={l.link}>{l.name}</a>
 </li>
 {/each}
 </ul>

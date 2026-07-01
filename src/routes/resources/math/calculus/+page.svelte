@@ -10,26 +10,26 @@ Books:
 	Useful books. OpenStax is the easiest to work-through.
 </p>
 <Link link="https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)">
-<LinkIcon/> OpenStax Calculus Book
+OpenStax Calculus Book
 </Link>
 <Link link="https://math.libretexts.org/Bookshelves/Calculus/Map%3A_Calculus__Early_Transcendentals_(Stewart)">
-<LinkIcon/> Early Transcendentals (Stewart)
+Early Transcendentals (Stewart)
 </Link>
 
 <h2 class="mt-10 text-xl font-bold">
 Articles
 </h2>
 <Link link="https://courses.lumenlearning.com/calculus1/chapter/symmetry-of-functions/">
-<LinkIcon/> Function Symmetry
+Function Symmetry
 </Link>
 
 <Link link="https://tutorial.math.lamar.edu/Problems/CalcI/CalcI.aspx">
-<LinkIcon/> Paul's Online Notes Calclus 1
+Paul's Online Notes Calclus 1
 </Link>
 
 
 <Link link="https://calcworkshop.com/application-derivatives/optimization-calculus/">
-<LinkIcon/> Optimization in Calclus
+Optimization in Calclus
 </Link>
 
 <h2 class="mt-10 text-xl font-bold">
@@ -40,12 +40,12 @@ Eduvos Year 1 ITMTA1:
 </p>
 
 <Link link="https://www.cuemath.com/calculus/algebraic-function/">
-<LinkIcon/> Types of Functions
+Types of Functions
 </Link>
 
 <span class="flex">
 <Link link="https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)">
-<LinkIcon/> OpenStax Calculus Book
+OpenStax Calculus Book
 </Link>
 <span class="italic">
 - Chapters 1 to 4
@@ -53,39 +53,39 @@ Eduvos Year 1 ITMTA1:
 </span>
 
 <Link link="https://www.mathwarehouse.com/calculus/continuity/what-are-types-of-discontinuities.php">
-<LinkIcon/> Types of Discontinuities
+Types of Discontinuities
 </Link>
 
 
 <Link link="https://www.mathsisfun.com/calculus/maxima-minima.html">
-<LinkIcon/> Maxima and Minima
+Maxima and Minima
 </Link>
 
 
 <Link link="https://www.analyzemath.com/calculus/applications/critical_numbers.html">
-<LinkIcon/> Finding Critical Numbers
+Finding Critical Numbers
 </Link>
 
 <Link link="https://math.libretexts.org/Bookshelves/Calculus/Calculus_3e_(Apex)/05%3A_Integration/5.03%3A_Riemann_Sums">
-<LinkIcon/> Riemann Sums
+Riemann Sums
 </Link>
 
 <Link link="https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-2/a/left-and-right-riemann-sums">
-<LinkIcon/> Left and Right Riemann Sums
+Left and Right Riemann Sums
 </Link>
 
 <Link link="https://calcworkshop.com/application-derivatives/optimization-calculus/">
-<LinkIcon/> Optimization in Calclus
+Optimization in Calclus
 </Link>
 
 <h2 class="mt-10 text-xl font-bold">
 Worksheets:
 </h2>
 <Link link="https://www.studocu.com/en-za/course/eduvos/mathematics1/5908765">
-<LinkIcon/> Past Papers
+Past Papers
 </Link>
 
 
 <Link link="https://www.derivativecalculus.com/worksheets.html">
-<LinkIcon/> Derivative Worksheet
+Derivative Worksheet
 </Link>

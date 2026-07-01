@@ -53,6 +53,7 @@
 			class={`input resize ${css_fullscreen ? 'absolute top-0 left-0 h-dvh w-full pt-2' : ''}`}
 			style={`${css_fullscreen ? 'z-index: 999;' : ''}`}
 			bind:value={settings.color_override}
+			placeholder="Type something here..."
 			onkeyup={() => {
 				if (!settings.color_override) {
 					cache_control({

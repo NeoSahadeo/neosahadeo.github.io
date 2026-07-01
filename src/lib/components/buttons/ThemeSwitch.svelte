@@ -3,17 +3,20 @@
 	import { cache_control } from '$lib/scripts/storage';
 	import { onMount } from 'svelte';
 	import LightIcon from '../icons/LightIcon.svelte';
+	import Button from './Button.svelte';
 
 	let checked = $state(true);
+	const dark_theme = "caramellatte";
+	const light_theme = "halloween";
 
 	const load = () => {
 		const theme =
 			cache_control({
 				name: 'data-theme',
 				method: 'get'
-			}) ?? 'sunset';
+			}) ?? dark_theme;
 		document.documentElement.setAttribute('data-theme', theme);
-		checked = theme !== 'sunset';
+		checked = theme !== dark_theme;
 	};
 
 	onMount(() => {
@@ -21,20 +24,20 @@
 	});
 </script>
 
-<button
-	class="btn btn-primary"
+<Button
+	className="btn btn-primary"
 	onclick={() => {
 		if (checked) {
 			cache_control({
 				name: 'data-theme',
 				method: 'set',
-				data: 'sunset'
+				data: dark_theme
 			});
 		} else {
 			cache_control({
 				name: 'data-theme',
 				method: 'set',
-				data: 'light'
+				data: light_theme
 			});
 		}
 		load();
@@ -45,4 +48,4 @@
 	{:else}
 		<DarkIcon />
 	{/if}
-</button>
+</Button>
