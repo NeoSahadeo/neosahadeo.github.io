@@ -1,5 +1,6 @@
 <script lang="ts">
 	import('../app.css');
+	import('../fonts.css');
 	import Header from '$lib/components/header/Header.svelte';
 	import Footer from '$lib/components/footer/Footer.svelte';
 	import {

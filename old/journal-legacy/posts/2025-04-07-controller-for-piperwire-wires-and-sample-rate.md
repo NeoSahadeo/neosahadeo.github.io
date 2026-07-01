@@ -9,6 +9,7 @@ tags:
   - pipewire
   - sunday
 ---
+
 Hey there! It was a Sunday afternoon and I thought it'd be a good idea to create a utility script to automate node connections and change the buffer size for Pipewire.
 
 I use the utilities provided by the [Pipewire Programs](https://docs.pipewire.org/page_programs.html). Its mainly just wrapper commands around `pw-link` and `pw-cli` with some regex to tie everything together.

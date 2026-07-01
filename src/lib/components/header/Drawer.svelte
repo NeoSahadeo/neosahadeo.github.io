@@ -31,7 +31,8 @@
 		['Projects', url_resolver('self') + 'projects'],
 		['Tutorials', url_resolver('self') + 'tutorials'],
 		['Blogs', url_resolver('self') + 'blogs'],
-		['Videos', url_resolver('self') + 'videos']
+		['Videos', url_resolver('self') + 'videos'],
+		['Resources', url_resolver('self') + 'resources']
 	];
 </script>
 

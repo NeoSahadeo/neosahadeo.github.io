@@ -7,6 +7,7 @@ tags:
   - discord
   - mods
 ---
+
 # What is Sextant
 
 Sextant is my Discord Electron Wrapper around Discord Web to provide a more optimised, privacy focused, and enhanced streaming to the base Discord experience.
@@ -96,24 +97,24 @@ To register the plugin, import the plugin into the main.ts file, then add the pl
 
 ```typescript
 const plugins = [
-    dispatcher, // We them events
-    file_loader, // Load asap
-    settings_tab, // Load asap2
-    dynamic_styles,
-    better_stream,
-    reduce_dom_size,
-    // your plugin goes here
+	dispatcher, // We them events
+	file_loader, // Load asap
+	settings_tab, // Load asap2
+	dynamic_styles,
+	better_stream,
+	reduce_dom_size
+	// your plugin goes here
 ];
 ```
 
-For the IPC Handler, there is a plugins\_handler list
+For the IPC Handler, there is a plugins_handler list
 
 ```typescript
 const plugin_handlers = [
-    file_loader_handler,
-    dynamic_styles_handler,
-    settings_tab_handler,
-    // your plugin handler (IPC) goes here
+	file_loader_handler,
+	dynamic_styles_handler,
+	settings_tab_handler
+	// your plugin handler (IPC) goes here
 ];
 ```
 
@@ -138,22 +139,20 @@ StopPropagation = true
 
 ### Stream Data to the Components
 
-*   window.sextant\_events.\[METHOD\]
-
+- window.sextant_events.\[METHOD\]
 
 Something you might want to do is have your plugin data be available to the components you inject. Sextant provides a event structure similar to normal Javascript. The event listener code is in the **utils.ts** file. Methods exposed: `addEventListener` `dispatchEvent` `removeEventListener`
 
 For example, in the **BetterStream** plugin, we stream data to the components using the dispatch event handler.
 
 ```typescript
-window.sextant_events.dispatchEvent("bitrate", bitrate);
+window.sextant_events.dispatchEvent('bitrate', bitrate);
 ```
 
 and in the component script we can listen for "bitrate" events.
 
 ```typescript
-window.sextant_events.addEventListener("bitrate", (bitrate: number) => {
-})
+window.sextant_events.addEventListener('bitrate', (bitrate: number) => {});
 ```
 
-> As a rule of thumb, make the event dispatch in the form of USERNAME\_EVENT to avoid naming conflicts and false event positives.
+> As a rule of thumb, make the event dispatch in the form of USERNAME_EVENT to avoid naming conflicts and false event positives.

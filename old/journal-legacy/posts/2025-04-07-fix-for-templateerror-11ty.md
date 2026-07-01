@@ -8,6 +8,7 @@ tags:
   - patch
   - bug
 ---
+
 I was compiling my blog page and I got an error:
 
 ```

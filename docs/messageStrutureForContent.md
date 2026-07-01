@@ -8,14 +8,13 @@ This does mean that the messages have to be structured in a certain
 way and a standard way to build a parser that can load in new commits
 and generate blog, video, tutorial, etc. entries.
 
-
 ## Models
 
 [cmd]
 [tutorial] {
-    "title":"",
-    "desc":"",
-    "tags":[],
-    "thumb":"",
-    "link":""
+"title":"",
+"desc":"",
+"tags":[],
+"thumb":"",
+"link":""
 }

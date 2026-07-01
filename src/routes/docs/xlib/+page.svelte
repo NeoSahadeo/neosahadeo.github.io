@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { url_resolver } from '$lib/scripts/urlResolver';
+
 	let htmlContent = $state();
 	onMount(async () => {
-		const response = await fetch('/external/docs/libX11.html');
-		htmlContent = await response.text();
+		// const response = await fetch(url_resolver('self') + '/external/docs/libX11.html');
+		// htmlContent = await response.text();
+		console.log('123');
 	});
 </script>
 
